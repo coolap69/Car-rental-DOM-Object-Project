@@ -12,16 +12,30 @@
     <title>Car Rental</title>
 </head>
 
-<body onload="staticValues()">
+<body>
 
-    <h1>Business Name</h1>
-    <p id="name"></p>
+    <h1>RADS RENTALS</h1>
     
-     <h3>Total Cars</h3>
-    <p id="allca"></p>
+    <!--addd a drop down section-->
+    
+<select id="carType" onchange="showFunc()">
+    <option value="none">none</option>
+    <option value="economyClass">Economy Class</option>
+    <option value="midsizeClass">Midsize Class</option>
+</select>
+    
+    <script>
+        function showFunc() {
+            document.getElementById("price").innerHTML = rental.economyCarsPrice;
+            document.getElementById("number").innerHTML = rental.economyCars;
 
-    <button onclick="rental.rentAll()">Rent any Car</button>
+            
 
+        }
+        
+        
+    </script>
+    
     <h3>Renter's Name</h3>
     <form>
         <input type="text" name="fname" placeholder="First name"><br><br>
@@ -31,11 +45,7 @@
     </form>
     <br>
 
-<select id="inside" onchange="showFunc()">
-    <option value="none">none</option>
-    <option value="economyClass">Economy Class</option>
-    <option value="midsizeClass">Midsize Class</option>
-</select>
+
 
    <div id = "econ">
         <h3>Economy Class</h3>

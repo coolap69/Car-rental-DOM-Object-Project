@@ -12,5 +12,4 @@ h3 {
 .dropdown-menu > li > a:hover {
     background-color: #4c5996 !important;
     color: white !important;
-    position: absolute !important;
 }
