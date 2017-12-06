@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Car Rental</title>
+</head>
+
+<body>
+
+    <h1>Business Name</h1>
+    <p id="name"></p>
+
+    <h3>Renter's Name</h3>
+    <form>
+        <input type="text" name="fname" placeholder="First name"><br>
+        <input type="text" name="lname" placeholder="Last name"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Total Cars</h3>
+    <p id="allca"></p>
+<select id="carType"onchange="showFunc()">
+    <option id="nada" value="none">none</option>
+    <option id="economico" value="economyClass">Economy Class</option>
+    <option id="mediano" value="midsizeClass">Midsize Class</option>
+</select>
+<br>
+    <!--<button onclick="rental.rentAll()">Rent any Car</button>-->
+
+  <!--<a href="javascript:showhide('hide')">clicktoshow</a>-->
+  <!--<div id="hide" style="display:none;">-->
+      
+<h3>Economy Class</h3>
+    <!--<p id="econ"></p>-->
+<h2>Cars Available</h2>
+<p id="econAvail"></p>
+
+    
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type of Vehicle
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a><p id="Accent">Hyundai Accent</p></a></li>
+            <li><a><p id="Fiesta">Ford Fiesta</p></a></li>
+            <li><a><p id="Yaris">Toyota Yaris</p></a></li>
+        </ul>
+    </div>
+    <br>
+    <button onclick="rental.rentEcon(), rental.rentAll()">Rent 1 Economy Car</button>
+
+
+  
+
+    <h3>Mid-size Class</h3>
+    <!--<p id="midsz"></p>-->
+    
+    <h2>Cars Available </h2>
+    <p id="midszAvail"> </p>
+
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type of Vehicle
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a><p id="Camry"></p>Toyota Camry</p></a></li>
+            <li><a><p id="Malibu"></p>Chevrolet Malibu</p></a></li>
+            <li><a><p id="Sonata"></p>Hyundai Sonata</p></a></li>
+        </ul>
+    </div>
+    <br>
+    <button onclick="rental.rentMid(), rental.rentAll()">Rent 1 Midsize Car</button>
+
+ 
+    <!--<button onclick="updateAvail()">Update Availability</button>-->
+
+
+    <script src="objects.js"></script>
+
+</body>
+
+</html>

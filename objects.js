@@ -1,54 +1,62 @@
-var rental = {
-name: "Enterprise Rent A Car",
-allCars: 270,
-allCarsBooked: 0,
-economyCars: 90,
-economyCarsBooked: 0,
-midsizeCars: 180,
-midsizeCarsBooked: 0,
-// carClass: ["Economy", "Midsize"],
-rentMid: function() {
-   document.getElementById("midszAvail").innerHTML = --this.midsizeCars;
-},
-bookedMid: function() {
-   document.getElementById("econAvail").innerHTML = ++this.midsizeCarsBooked;
-},
+var cars = {
+   type: [{
 
-rentEcon: function() {
-   document.getElementById("econAvail").innerHTML = --this.economyCars;
-},
+         model: "Choose",
+         available: "",
+         booked: "",
+         price: "",
+      },
+      {
 
-rentAll: function() {
-   document.getElementById("allca").innerHTML = --this.allCars;
-},
+         model: "Economy",
+         available: 30,
+         booked: 0,
+         price: "$60",
+      },
 
-bookedAll: function() {
-   document.getElementById("allca").innerHTML = ++this.allCars;
-}
+      {
+         model: "Midsize",
+         available: 20,
+         booked: 0,
+         price: "$80",
+      },
+
+      {
+         model: "Luxury",
+         available: 10,
+         booked: 0,
+         price: "$120",
+      }
+   ]
 };
 
-function updateAvail() {
-   document.getElementById("midszAvail").innerHTML = rental.midsizeCars;
-   document.getElementById("econAvail").innerHTML = rental.economyCars;
-   document.getElementById("allca").innerHTML = rental.allCars;
-   // document.getElementById("allca").innerHTML = rental.allCars;
+for (var i = 0; i < cars.type.length; i++) {
+   var options = document.createElement("OPTION");
+   options.innerHTML = cars.type[i].model;
+   document.getElementById("optionTags").appendChild(options);
+
+   options.setAttribute("value", i);
+   document.getElementById("available").innerHTML = cars.type[0].available;
+   document.getElementById("price").innerHTML = cars.type[0].price;
+}
+
+
+document.getElementById("optionTags").onchange = function() {
+   var val = document.getElementById("optionTags").value
+   val = parseInt(val)
+   document.getElementById("available").innerHTML = cars.type[val].available;
+   document.getElementById("price").innerHTML = cars.type[val].price;
 
 }
 
-function staticValues() {
-   document.getElementById("name").innerHTML = rental.name;
-   document.getElementById("econ").innerHTML = rental.carClass[0];
-   document.getElementById("midsz").innerHTML = rental.carClass[1];
-   document.getElementById("allca").innerHTML = rental.allCars;
-}
+// function rent() {
+//    var renterName = document.getElementById("fname").value;
+//    var typeCar = document.getElementById("optionTags") cars.type[].;
 
-function typesOfCars() {
-   document.getElementById("Accent").innerHTML = "#10, $50 per day";
-}
-
-document.getElementById("Accent").onclick = function(){typesOfCars()};
-
-
-// function myFunction() {
-//     document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
 // }
+
+document.getElementById("rentCar").onsubmit = function(event) {
+   // console.log ("submit")
+   event.preventDefault();
+
+}
