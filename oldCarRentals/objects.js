@@ -65,12 +65,9 @@ function showFunc() {
    var drop = document.getElementById("carType").value;
    if (drop ="economico") {
             document.getElementById("econAvail").innerHTML = rental.economyCars;
-   } else {
-      (drop ="mediano")
+   } else if (drop ="mediano")
       document.getElementById("midszAvail").innerHTML = rental.midsizeCars;
    // } else { 
    //    (drop ==="nada")
-      
-   
-}
+
 }
